@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventFlow AI - Experience Engine</title>
+    <meta name="description" content="AI-driven event experience engine for queue predictions and personalized recommendations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar glass-panel">
+            <div class="brand">
+                <i data-lucide="zap" class="text-neon huge-icon" style="width: 24px; height: 24px;"></i>
+                <h1>EventFlow AI</h1>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="active" data-tab="dashboard">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li data-tab="venues">
+                    <i data-lucide="map"></i>
+                    <span>Venues & Queues</span>
+                </li>
+                <li data-tab="alerts">
+                    <i data-lucide="bell-ring"></i>
+                    <span>System Alerts</span>
+                    <span class="badge pulse-badge">3</span>
+                </li>
+                <li data-tab="recommendations">
+                    <i data-lucide="sparkles"></i>
+                    <span>AI Engine</span>
+                </li>
+            </ul>
+
+            <div class="user-profile">
+                <div class="avatar">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=EventUser" alt="User Avatar">
+                </div>
+                <div class="user-info">
+                    <span class="name">Event Manager</span>
+                    <span class="status">Admin Panel</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <h2>Overview</h2>
+                <div class="header-actions">
+                    <div class="search-bar glass-panel">
+                        <i data-lucide="search"></i>
+                        <input type="text" placeholder="Search queues, zones...">
+                    </div>
+                    <button class="icon-btn glass-panel" title="Settings">
+                        <i data-lucide="settings"></i>
+                    </button>
+                    <button class="icon-btn glass-panel ai-chat-btn" title="Ask AI">
+                        <i data-lucide="bot"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dynamic Views -->
+            <div class="view-container">
+                <!-- Dashboard View -->
+                <div id="view-dashboard" class="view active">
+                    <div class="stats-grid">
+                        <div class="stat-card glass-panel">
+                            <div class="stat-icon text-neon">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <div class="stat-details">
+                                <p>Live Attendees</p>
+                                <h3>24,592</h3>
+                                <div class="trend positive"><i data-lucide="trending-up"></i> +5% from prediction</div>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <div class="stat-icon text-secondary">
+                                <i data-lucide="clock"></i>
+                            </div>
+                            <div class="stat-details">
+                                <p>Avg. Queue Wait</p>
+                                <h3>12 min</h3>
+                                <div class="trend negative"><i data-lucide="trending-down"></i> -2 min from baseline</div>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <div class="stat-icon text-warning">
+                                <i data-lucide="alert-triangle"></i>
+                            </div>
+                            <div class="stat-details">
+                                <p>Active Alerts</p>
+                                <h3>3 Events</h3>
+                                <div class="trend warning"><i data-lucide="alert-circle"></i> Requires attention</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-grid">
+                        <!-- Queue Predictions -->
+                        <div class="panel glass-panel queue-panel">
+                            <div class="panel-header">
+                                <h3>Live Queue AI Predictions</h3>
+                                <i data-lucide="activity" class="pulse-icon"></i>
+                            </div>
+                            <div class="queue-list" id="queue-list-container">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Venue Density Map -->
+                        <div class="panel glass-panel map-panel">
+                            <div class="panel-header">
+                                <h3>Crowd Density Monitor</h3>
+                                <button class="btn btn-sm">Zone Map</button>
+                            </div>
+                            <p class="text-muted" style="margin-bottom: 1rem; font-size: 0.85rem;">Computer vision and WiFi telemetry estimating density</p>
+                            <div class="density-grid">
+                                <div class="zone high"><span class="zone-name">Main Stage</span><span class="pct">92%</span></div>
+                                <div class="zone medium"><span class="zone-name">Food Court A</span><span class="pct">65%</span></div>
+                                <div class="zone low"><span class="zone-name">Restroom North</span><span class="pct">20%</span></div>
+                                <div class="zone high"><span class="zone-name">Entry Gate 1</span><span class="pct">88%</span></div>
+                                <div class="zone low"><span class="zone-name">Merch Stand B</span><span class="pct">15%</span></div>
+                                <div class="zone medium"><span class="zone-name">Stage 2</span><span class="pct">55%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venues & Queues View -->
+                <div id="view-venues" class="view hidden">
+                    <h3 class="view-title">Facility Wait Times</h3>
+                    <div class="venue-cards" id="venues-detailed-container">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Alerts View -->
+                <div id="view-alerts" class="view hidden">
+                    <h3 class="view-title">Real-time Emergency & Capacity Alerts</h3>
+                    <div class="alerts-container" id="alerts-list-container">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- AI Recommendations View -->
+                <div id="view-recommendations" class="view hidden">
+                    <div class="recommendation-header text-center">
+                        <i data-lucide="sparkles" class="text-neon huge-icon"></i>
+                        <h3 class="view-title mt-2">Personalized Recommendation Engine</h3>
+                        <p class="text-muted" style="max-width: 600px; margin: 0.5rem auto;">The engine automatically evaluates predictive crowd models to deliver optimal viewing spots, smoother paths, and proactive updates ensuring event efficiency.</p>
+                    </div>
+                    <div class="recommendation-cards" id="recommendations-container">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
