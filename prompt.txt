@@ -1,0 +1,34 @@
+Create the system integrates queue time prediction, real-time alerts, and personalized recommendations into a unified AI-driven experience engine.
+It continuously analyzes historical and live data to estimate waiting times at food stalls, restrooms, and entry gates, while simultaneously monitoring crowd density across the venue. 
+Based on this, users receive instant alerts about overcrowded zones, emergency situations, and important event updates. Leveraging these insights, the AI delivers personalized recommendations by guiding attendees to less crowded facilities, suggesting optimal viewing spots, and helping them make smarter decisions in real time—ensuring both efficiency and a seamless event experience.
+GENERATE THE UI AND ADD THE ADDITIONAL FEATURES WHEREVER REQUIRED.
+
+EventFlow AI – Prompt Design
+
+----------------------------------------
+
+[1] Queue Time Prediction
+Predict the waiting time at various venue facilities such as food stalls, restrooms, and entry gates using crowd density, time of day, and historical usage patterns. Provide estimated wait time in minutes along with a confidence level.
+
+----------------------------------------
+
+[2] Real-Time Crowd Alerts
+Analyze live crowd density data to identify overcrowded zones. Trigger alerts when density exceeds safe thresholds and suggest safer alternative routes or nearby less crowded areas.
+
+----------------------------------------
+
+[3] Personalized Experience Engine
+Based on user preferences, current location, and crowd conditions, recommend less crowded facilities, optimal viewing spots, and nearby services to enhance the user experience.
+
+----------------------------------------
+
+[4] Smart Navigation System
+Generate the most efficient path for users within the venue by considering congestion levels, entry/exit points, and safety constraints. Continuously update routes based on real-time changes.
+
+----------------------------------------
+
+[5] Crowd Behavior Insights
+Analyze crowd movement patterns and predict peak congestion times. Provide actionable insights to improve crowd management and resource allocation during events.
+
+----------------------------------------
+
