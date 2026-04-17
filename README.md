@@ -4,13 +4,13 @@ EventFlow AI is an intelligent system that I designed and developed to enhance t
 ### Dashboard
 ![Dashboard](screenshot/dashboard.png)
 ### Queue Time Prediction
-![Queue](screenshot/venue and queue.png)
+![Queue](screenshot/venue-queue.png)
 
 ### Real-Time Alerts
 ![Alert](screenshot/alert.png)
 
 ###  AI Experience Engine
-![AI Engine](screenshot/ai engine.png)
+![AI Engine](screenshot/ai-engine.png)
 
 ### Preview
 ![AI Engine](screenshot/preview.png)
